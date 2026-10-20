@@ -49,36 +49,3 @@
   <div class="portal-card">
     <div class="mb-3 fs-1">📚</div>
     <h4 class="fw-bold text-dark mb-2">FOMO Admin Portal</h4>
-    <p class="text-muted mb-4 small">Tap the button below to launch the management system directly in your device browser.</p>
-    
-    <!-- Direct external launch link with Android Chrome Intent -->
-    <a id="launchBtn" href="#" class="btn-launch mb-3">
-      🚀 Open Admin Dashboard
-    </a>
-    
-    <div class="text-secondary" style="font-size: 0.75rem;">
-      Compatible with Android, iOS, Chrome & Safari
-    </div>
-  </div>
-
-  <script>
-    var scriptUrl = "https://script.google.com/macros/s/AKfycbzubFH9FekEM3gCsiLI7rFebnpJ8HyNkBuJ52pIxgYo0q8Vjp0NvNV2WuoExnmkbbbm/exec";
-    var cleanUrl = scriptUrl.replace("https://", "");
-
-    // Intent scheme to force launch in Chrome App on Android
-    var androidIntent = "intent://" + cleanUrl + "#Intent;scheme=https;package=com.android.chrome;end";
-    
-    var isAndroid = /Android/i.test(navigator.userAgent);
-    var launchBtn = document.getElementById('launchBtn');
-
-    if (isAndroid) {
-      launchBtn.href = androidIntent;
-    } else {
-      launchBtn.href = scriptUrl;
-      launchBtn.target = "_blank";
-      launchBtn.rel = "noopener noreferrer";
-    }
-  </script>
-
-</body>
-</html>
