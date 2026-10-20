@@ -1,25 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>FOMO Reading Room Admin</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background-color: #f8f9fa; font-family: sans-serif; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; padding: 20px; }
+    .card { max-width: 420px; width: 100%; border-radius: 16px; border: none; box-shadow: 0 10px 25px rgba(0,0,0,0.08); text-align: center; padding: 30px 20px; }
+    .btn-custom { background-color: #0d6efd; color: white; font-weight: 600; padding: 12px 24px; border-radius: 10px; text-decoration: none; display: inline-block; width: 100%; transition: all 0.2s; }
+    .btn-custom:hover { background-color: #0b5ed7; color: white; }
+  </style>
   <script>
-    // LOCATION 1: JavaScript Auto-Redirect
-    var googleAppsScriptUrl = "https://script.google.com/macros/s/AKfycbziOKcsCArNgE7_xrdLRRJ1SrFgIWLixAXJLWgzOlvvJv_EglJc4gwSl9UfgfI7NUKO/exec";
+    var targetUrl = "https://script.google.com/macros/s/AKfycbziOKcsCArNgE7_xrdLRRJ1SrFgIWLixAXJLWgzOlvvJv_EglJc4gwSl9UfgfI7NUKO/exec";
 
-    // Auto-redirect to force native browser opening
-    window.location.href = googleAppsScriptUrl;
+    // 1. Force top-level navigation to break out of WhatsApp frame
+    if (window.top !== window.self) {
+      window.top.location.href = targetUrl;
+    } else {
+      window.location.href = targetUrl;
+    }
   </script>
 </head>
-<body style="font-family: Arial, sans-serif; text-align: center; padding-top: 50px; background-color: #f8f9fa;">
-  <h3>Opening FOMO Admin Management System...</h3>
-  
-  <!-- LOCATION 2: HTML Direct Fallback Link -->
-  <p>If you are not redirected automatically within 3 seconds, <a id="redirectLink" href="https://script.google.com/macros/s/AKfycbziOKcsCArNgE7_xrdLRRJ1SrFgIWLixAXJLWgzOlvvJv_EglJc4gwSl9UfgfI7NUKO/exec">click here to open</a>.</p>
+<body>
+
+  <div class="card">
+    <h4 class="mb-3">📚 FOMO Admin Portal</h4>
+    <p class="text-muted mb-4">Opening management system in your browser...</p>
+    
+    <!-- Explicit intent link for mobile webviews -->
+    <a id="launchBtn" href="https://script.google.com/macros/s/AKfycbziOKcsCArNgE7_xrdLRRJ1SrFgIWLixAXJLWgzOlvvJv_EglJc4gwSl9UfgfI7NUKO/exec" target="_blank" rel="noopener noreferrer" class="btn btn-custom mb-3">
+      🚀 Click to Open Dashboard
+    </a>
+    
+    <small class="text-secondary" style="font-size: 0.8rem;">Works on Chrome, Safari, WhatsApp & Mobile Devices</small>
+  </div>
 
   <script>
-    document.getElementById('redirectLink').href = googleAppsScriptUrl;
+    document.getElementById('launchBtn').href = targetUrl;
   </script>
 </body>
 </html>
